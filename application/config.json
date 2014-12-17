@@ -1,0 +1,13 @@
+{
+    "SCRIBD_API_KEY": "your-api-key",
+    "SCRIBD_API_SECRET": "your-api-secret",
+    "COOKIE_NAME": "acm-elibrary.token_key",
+    "AUTH_SERVER_URL": "http://engr-acm-sso-01.acm.illinois.edu:8095/crowd/rest/usermanagement/latest{endpoint}",
+    "AUTH_SERVER_LOGIN_ENDPOINT": "/session",
+    "AUTH_SERVER_LOGIN_DATA": "{{\"username\": \"{username}\", \"password\": \"{password}\"}}",
+    "AUTH_SERVER_SESSION_ENDPOINT": "/session/{token}",
+    "AUTH_SERVER_SESSION_DATA": "{}",
+    "AUTH_SERVER_HEADERS": {"Content-Type": "application/json", "Accept": "application/json"},
+    "AUTH_SERVER_APP_NAME": "your-crowd-app-name",
+    "AUTH_SERVER_APP_PASSWORD": "your-crowd-app-password"
+}

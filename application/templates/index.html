@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="large-12 columns">
+        <div class="panel">
+            <h1 class="page-header">ACM eLibrary <small>by Alex Burck</small></h1>
+            {% if session %}<a class="logout-button" href="{{ url_for('views.logout') }}">Logout</a>{% endif %}
+        </div>
+    </div>
+</div>
+
+<div id="docs">
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="search-container panel">
+                <input class="search" placeholder="Search" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <table class="docs-table">
+                <thead>
+                    <tr>
+                        <!-- We need these rows so the column widths are correct -->
+                        <th class="thumbnail-col"></th>
+                        <th class="info-col"></th>
+                    </tr>
+                </thead>
+                <tbody class="list">
+                    {% for doc in docs %}
+                    <tr>
+                        <td class="thumbnail"><a href="{{ doc.link }}"><img src="{{ doc.thumbnail }}"></a></td>
+                        <td class="info">
+                            <a href="{{ doc.link }}"><h4 class="title">{{ doc.title }}</h4></a>
+                            <p class="description">{{ doc.description }}</p>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id='embedded_doc'><a href='http://www.scribd.com'>Scribd</a></div>
+{% endblock %}
+
+{% block scripts %}
+{% assets "scribd_js" %}
+<script type="text/javascript" src="{{ ASSET_URL }}"></script>
+{% endassets %}
+<script type='text/javascript'>
+    // https://www.scribd.com/developers/javascript_api
+    var scribd_doc = scribd.Document.getDoc({{ doc_id }}, '{{ access_key }}');
+    var onDocReady = function(e){
+        // scribd_doc.api.setPage(3);
+        scribd_doc.api.setFullscreen(true);
+    };
+    scribd_doc.addParam('jsapi_version', 2);
+    scribd_doc.addEventListener('docReady', onDocReady);
+    scribd_doc.write('embedded_doc');
+</script>
+{% endblock %}

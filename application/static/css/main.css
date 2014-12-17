@@ -1,0 +1,60 @@
+h1.page-header {
+    display: inline-block;
+}
+.logout-button {
+    float: right;
+}
+input.search {
+    width: 100%;
+    padding: 5px;
+    line-height: 1.6;
+    font-size: 1rem;
+    border: 1px solid #e2e2e2;
+}
+input.search:hover {
+    border: 1px solid #bebebe;
+}
+input.search:focus,
+input.search.focus {
+    border: 1px solid #0d4eee;
+    outline: none;
+}
+
+table.docs-table {
+    width: 100%;
+    table-layout: fixed;
+    margin-top: -19px; /* To offset the hidden header */
+}
+table.docs-table > thead {
+    visibility: hidden;
+}
+table.docs-table > tbody {
+    border: 1px solid #ddd;
+}
+th.thumbnail-col {
+    width: 150px;
+}
+
+td.thumbnail img {
+    width: 111px;
+    height: auto;
+}
+td.info {
+    vertical-align: top;
+}
+td.info > a:link {
+    color: inherit;
+    text-decoration: inherit;
+}
+td.info > a:visited {
+    color: inherit;
+    text-decoration: inherit;
+}
+td.info > a:hover {
+    color: inherit;
+    text-decoration: inherit;
+}
+td.info > a:active {
+    color: inherit;
+    text-decoration: inherit;
+}

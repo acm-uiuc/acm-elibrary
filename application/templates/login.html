@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block default_viewport %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+{% endblock %}
+
+{% block styles %}
+{% assets "login_css" %}<link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}">{% endassets %}
+{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <h2 class="login-header">ACM eLibrary</h2>
+    <form method="post">
+        <div class="row">
+            <div class="large-12 columns">
+                <input type="text" id="netid" name="netid" placeholder="NetID" aria-label="NetID" required autofocus>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                <input type="password" id="password" name="password" placeholder="Password" aria-label="Password" required>
+            </div>
+        </div>
+        {% if error %}
+        <div class="row">
+            <div class="large-12 columns">
+                <small class="error">{{ error }}</small>
+            </div>
+        </div>
+        {% endif %}
+        <div class="row">
+            <div class="large-12 columns">
+                <button type="submit" class="button expand login-button" aria-label="Login">Login</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
